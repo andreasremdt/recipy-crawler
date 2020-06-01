@@ -26,7 +26,8 @@ class HelloFreshProvider {
     return this.page.$eval(".fela-_1slhjvb", (element) => {
       return {
         time: element.firstElementChild.children[1].textContent,
-        level: element.lastElementChild.children[1].textContent
+        level: element.lastElementChild.children[1].textContent,
+        servings: 2
       };
     });
   }

@@ -1,3 +1,6 @@
+var HelloFreshProvider = require("./providers/hellofresh");
+var TastyProvider = require("./providers/tasty");
+
 function getURL(text) {
   return text
     .toLowerCase()
@@ -6,6 +9,14 @@ function getURL(text) {
     .replace(/ +/g, "-");
 }
 
-module.exports = {
-  getURL
-};
+function getProvider(url) {
+  if (url.includes("www.hellofresh.")) {
+    return HelloFreshProvider;
+  } else if (url.includes("tasty.co")) {
+    return TastyProvider;
+  }
+
+  return null;
+}
+
+module.exports = { getURL, getProvider };
