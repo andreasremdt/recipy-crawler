@@ -3,6 +3,8 @@ class HelloFreshProvider {
     this.page = page;
   }
 
+  load() {}
+
   get title() {
     return this.page.$eval(
       '[data-test-id="recipeDetailFragment.recipe-name"]',
